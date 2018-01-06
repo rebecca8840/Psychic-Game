@@ -25,15 +25,19 @@ function Guesschange() {
 
 // Game portion
 
-    var userGuess = prompt("Guess which letter I'm thinking of.").toLowerCase();
+    //var userGuess = prompt("Guess which letter I'm thinking of.").toLowerCase();
 
-    document.onkeyup = function(event) {
+    document.onkeypress = function(event) {
 
 
     guessesSoFar.push(userGuess);
 
+    var userGuess = event.key;
 
-    for (var i = 0; i < computerLetters.length; i++){
+    console.log(userGuess);
+
+
+    //for (var i = 0; i < computerLetters.length; i++){
 
     
     if (userGuess === computerGuess) {
@@ -55,10 +59,10 @@ function Guesschange() {
     }
 
     else if (userGuess !== computerGuess) {
-            alert("Try again!");
-            guessesLeft--;
-            Guesschange();
-    }
+       alert("Try again!");
+        guessesLeft--;
+        Guesschange();
+   }
 };
 
 
@@ -75,4 +79,3 @@ function Guesschange() {
 
     "<p>Your Guesses so far: " + guessesSoFar + "</p>";
     
-};
