@@ -14,9 +14,13 @@ var guessesSoFar = [];
 
 // Game portion
 
+    var userGuess = prompt("Guess which letter I'm thinking of.").toLowerCase();
+    //String.fromCharCode(event.keyCode).toLowerCase();
+
+    
 document.onkeyup = function(event) {
 
-    var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+
 
     var computerGuess = computerLetters[Math.floor(Math.random()*computerLetters.length)];
 
