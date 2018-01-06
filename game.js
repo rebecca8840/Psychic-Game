@@ -11,27 +11,31 @@ var guessesLeft = 9;
 var guessesSoFar = [];
 
 
+var computerGuess = computerLetters[Math.floor(Math.random() * computerLetters.length)];
 
-console.log("hi");
+console.log(computerGuess);
+
+
+function Guesschange() {
+    computerLetters[Math.floor(Math.random() * computerLetters.length)];
+
+    console.log(computerGuess);
+};
+
 // Game portion
 
     var userGuess = prompt("Guess which letter I'm thinking of.").toLowerCase();
 
-
     document.onkeyup = function(event) {
-
-
-    var computerGuess = computerLetters[Math.floor(Math.random()*computerLetters.length)];
 
 
     guessesSoFar.push(userGuess);
 
 
     for (var i = 0; i < computerLetters.length; i++){
-       
 
     
-    if (userGuess == computerGuess) {
+    if (userGuess === computerGuess) {
                 alert("Correct!")
                 wins ++;
                 guessesLeft = 9;
@@ -39,7 +43,7 @@ console.log("hi");
     }
 
 
-    else if (guessesLeft == 0) {
+    else if (guessesLeft === 0) {
             alert("You are out of guesses. Try again!")
             losses++;
             guessesLeft = 9;
