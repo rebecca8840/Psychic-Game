@@ -12,24 +12,27 @@ var guessesSoFar = [];
 
 
 
+console.log("hi");
 // Game portion
 
     var userGuess = prompt("Guess which letter I'm thinking of.").toLowerCase();
-    //String.fromCharCode(event.keyCode).toLowerCase();
 
-    
-document.onkeyup = function(event) {
 
+    document.onkeyup = function(event) {
 
 
     var computerGuess = computerLetters[Math.floor(Math.random()*computerLetters.length)];
 
+
     guessesSoFar.push(userGuess);
 
 
+    for (var i = 0; i < computerLetters.length; i++){
+       
 
+    
     if (userGuess == computerGuess) {
-
+                alert("Correct!")
                 wins ++;
                 guessesLeft = 9;
                 guessesSoFar.length = 0;
@@ -37,16 +40,18 @@ document.onkeyup = function(event) {
 
 
     else if (guessesLeft == 0) {
-
+            alert("You are out of guesses. Try again!")
             losses++;
             guessesLeft = 9;
             guessesSoFar.length = 0;
     }
 
     else if (userGuess !== computerGuess) {
-
+            alert("Try again!")
             guessesLeft--;
     }
+};
+
 
 
     var html = "<h1>The Psychic Game</h1>" + 
@@ -60,7 +65,5 @@ document.onkeyup = function(event) {
     "<p>Guesses left: " + guessesLeft + "</p>" +
 
     "<p>Your Guesses so far: " + guessesSoFar + "</p>";
-
-    document.querySelector(#game).innerHTML = html;
     
-}
+};
