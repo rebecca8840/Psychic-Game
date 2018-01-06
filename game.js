@@ -16,11 +16,11 @@ var computerGuess = computerLetters[Math.floor(Math.random() * computerLetters.l
 console.log(computerGuess);
 
 
-function Guesschange() {
-    computerLetters[Math.floor(Math.random() * computerLetters.length)];
+function Guesschange() {    
+    computerLetters[Math.floor(Math.random() * computerLetters.length)];    console.log(computerGuess);
+}
 
-    console.log(computerGuess);
-};
+
 
 // Game portion
 
@@ -40,6 +40,7 @@ function Guesschange() {
                 wins ++;
                 guessesLeft = 9;
                 guessesSoFar.length = 0;
+                Guesschange();
     }
 
 
@@ -48,11 +49,13 @@ function Guesschange() {
             losses++;
             guessesLeft = 9;
             guessesSoFar.length = 0;
+            Guesschange();
     }
 
     else if (userGuess !== computerGuess) {
             alert("Try again!")
             guessesLeft--;
+            Guesschange();
     }
 };
 
