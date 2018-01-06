@@ -17,7 +17,8 @@ console.log(computerGuess);
 
 
 function Guesschange() {    
-    computerLetters[Math.floor(Math.random() * computerLetters.length)];    console.log(computerGuess);
+    computerGuess; 
+    console.log(computerGuess);
 }
 
 
@@ -36,24 +37,25 @@ function Guesschange() {
 
     
     if (userGuess === computerGuess) {
-                alert("Correct!")
+                alert("Correct!");
                 wins ++;
-                guessesLeft = 9;
                 guessesSoFar.length = 0;
                 Guesschange();
+                
     }
 
 
     else if (guessesLeft === 0) {
-            alert("You are out of guesses. Try again!")
+            alert("You are out of guesses. Try again!");
             losses++;
             guessesLeft = 9;
             guessesSoFar.length = 0;
             Guesschange();
+
     }
 
     else if (userGuess !== computerGuess) {
-            alert("Try again!")
+            alert("Try again!");
             guessesLeft--;
             Guesschange();
     }
